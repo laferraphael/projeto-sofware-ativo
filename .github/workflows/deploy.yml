@@ -42,7 +42,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ezambomsantana/stocks-ci:${{ github.sha }}
+          tags: raphaellafer/stocks-ci:${{ github.sha }}
 
       - name: executing remote ssh commands using password
         uses: appleboy/ssh-action@master
@@ -54,4 +54,4 @@ jobs:
           script: |
             docker stop stocks
             docker rm --force stocks
-            docker run -d -p 8080:8080 --name stocks ezambomsantana/stocks-ci:${{ github.sha }}
+            docker run -d -p 8080:8080 --name stocks raphaellafer/stocks-ci:${{ github.sha }}

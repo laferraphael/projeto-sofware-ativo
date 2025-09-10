@@ -2,6 +2,7 @@ package br.insper.cotacao.stocks.model;
 
 import br.insper.cotacao.stocks.dto.StockDTO;
 import jakarta.persistence.*;
+import org.hibernate.annotations.Columns;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -15,6 +16,7 @@ public class Stock {
     private String ticker;
     private String name;
     private String description;
+    @Column(name="last_val")
     private Float lastValue;
     private LocalDate dateLastValue;
     private LocalDate dateRegister;
